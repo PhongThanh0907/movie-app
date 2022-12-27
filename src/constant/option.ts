@@ -49,3 +49,9 @@ export const mediaEndpoints = {
     page: number;
   }) => `${mediaType}/search?query=${query}&page=${page}`,
 };
+
+export const themeModes = {
+  DARK: "dark",
+  LIGHT: "light"
+};
+

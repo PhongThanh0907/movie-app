@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Favorite } from "../../types/favorite.type";
+import { Favorite, User } from "../../types/favorite.type";
 
-interface UserState {
-    user: any;
+export interface UserState {
+    user: User | null;
     listFavorites: Favorite[]
 }
 

@@ -1,6 +1,8 @@
 import privateClient from "../client/private.client";
 import publicClient from "../client/public.client";
 import { userEndpoints } from "../../constant/option";
+import axios from "axios";
+import { ErrorType } from "../../types/favorite.type";
 
 const userApi = {
   signin: async ({
@@ -18,6 +20,12 @@ const userApi = {
 
       return { response };
     } catch (err) {
+      if (err && axios.isAxiosError(err)) {
+        if (err.response) {
+          const data: ErrorType = err.response.data;
+          return { message: data.error.message };
+        }
+      }
       return { err };
     }
   },
@@ -42,6 +50,12 @@ const userApi = {
 
       return { response };
     } catch (err) {
+      if (err && axios.isAxiosError(err)) {
+        if (err.response) {
+          const data: ErrorType = err.response.data;
+          return { message: data.error.message };
+        }
+      }
       return { err };
     }
   },
@@ -51,6 +65,12 @@ const userApi = {
 
       return { response };
     } catch (err) {
+      if (err && axios.isAxiosError(err)) {
+        if (err.response) {
+          const data: ErrorType = err.response.data;
+          return { message: data.error.message };
+        }
+      }
       return { err };
     }
   },
